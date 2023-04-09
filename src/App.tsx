@@ -1,8 +1,18 @@
 import type { Component } from 'solid-js';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+import Canvas from './Canvas';
 
 const App: Component = () => {
   return (
-    <p class="text-4xl text-green-700 text-center py-20">Hello tailwind!</p>
+    <div class='flex flex-col h-full'>
+      <Navbar />
+
+      <div class='grow flex'>
+        <Sidebar />
+        <Canvas />
+      </div>
+    </div>
   );
 };
 
