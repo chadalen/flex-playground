@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
-import Canvas from './Canvas';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import Canvas from './components/Canvas';
 
 const App: Component = () => {
   return (

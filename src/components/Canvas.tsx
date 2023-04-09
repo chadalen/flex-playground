@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import Card from "./components/Card";
+import Card from "./Card";
 
 const Canvas: Component = () => {
   return (
