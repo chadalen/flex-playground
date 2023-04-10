@@ -1,17 +1,28 @@
 import { Component } from 'solid-js';
 
 export interface CardProps {
-  index: number;
+  children?: any;
+  onCloseCard?: () => void;
 }
 
 const Card: Component<CardProps> = ({
-  index,
+  children,
+  onCloseCard,
 }) => {
+
+  function handleCloseCard() {
+    onCloseCard?.();
+  }
+
   return (
-    <div class='bg-white rounded p-2'>
+    <div class='bg-white rounded p-2 flex justify-between'>
       <span>
-        Index: {index}
+        {children}
       </span>
+
+      <button onClick={handleCloseCard}>
+        Close
+      </button>
     </div>
   )
 }
