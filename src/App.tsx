@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Canvas from './components/Canvas';
 import { CardProvider } from './providers/card';
+import { FlexProvider } from './providers/flex-provider';
 
 const App: Component = () => {
   return (
@@ -11,8 +12,10 @@ const App: Component = () => {
         <Navbar />
 
         <div class='grow flex'>
-          <Sidebar />
-          <Canvas />
+          <FlexProvider>
+            <Sidebar />
+            <Canvas />
+          </FlexProvider>
         </div>
       </div>
     </CardProvider>

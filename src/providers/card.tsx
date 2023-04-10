@@ -11,24 +11,24 @@ type Card = {
 
 type CardContext = [Accessor<Card[]>, CardActions];
 
-const CardContext = createContext <CardContext>();
+const CardContext = createContext<CardContext>();
 
 export function CardProvider(props) {
   const [cards, setCards] = createSignal<Card[]>([]);
-  const card: CardContext = [
-      cards,
-      {
-        addCard() {
-          setCards((c) => [...c, { }]);
-        },
-        removeCard(index: number) {
-          setCards((c) => c.filter((_, i) => i !== index));
-        }
+  const value: CardContext = [
+    cards,
+    {
+      addCard() {
+        setCards((c) => [...c, { }]);
+      },
+      removeCard(index: number) {
+        setCards((c) => c.filter((_, i) => i !== index));
       }
-    ];
+    }
+  ];
 
   return (
-    <CardContext.Provider value={card}>
+    <CardContext.Provider value={value}>
       {props.children}
     </CardContext.Provider>
   );
