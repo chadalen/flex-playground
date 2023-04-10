@@ -84,7 +84,7 @@ const Canvas: Component = () => {
   return (
     <div class={
       clsx(
-        "p-4 grow bg-slate-300 flex",
+        "p-2 grow bg-slate-300 flex gap-2",
         flexDirectionClass(),
         flexWrapClass(),
         justifyContentClass(),
@@ -93,7 +93,7 @@ const Canvas: Component = () => {
     )}>
       <For each={cards()}>
         {(_, index) => {
-          return <Card onCloseCard={() => removeCard(index())}>index: {index}</Card>;
+          return <Card onCloseCard={() => removeCard(index())}>{index}</Card>;
         }}
       </For>
     </div>
