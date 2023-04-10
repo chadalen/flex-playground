@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { useCard } from "../providers/card";
+import { useCard } from "../providers/card-provider";
 
 const Navbar: Component = () => {
   const [_, { addCard }] = useCard();

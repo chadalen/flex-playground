@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js';
 import Card from './Card';
-import { useCard } from '../providers/card';
+import { useCard } from '../providers/card-provider';
 import clsx from 'clsx';
 import { useFlex } from '../providers/flex-provider';
 
