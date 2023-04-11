@@ -3,6 +3,7 @@ import { createSignal, createContext, useContext, Accessor } from "solid-js";
 type CardActions = {
   addCard(): void;
   removeCard(index: number): void;
+  clearCards(): void;
 }
 
 type Card = {
@@ -23,7 +24,10 @@ export function CardProvider(props) {
       },
       removeCard(index: number) {
         setCards((c) => c.filter((_, i) => i !== index));
-      }
+      },
+      clearCards() {
+        setCards([]);
+      },
     }
   ];
 
