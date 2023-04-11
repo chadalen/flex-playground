@@ -84,7 +84,7 @@ const Canvas: Component = () => {
   return (
     <div class={
       clsx(
-        "p-2 grow bg-slate-300 flex gap-2",
+        "p-2 flex gap-2 h-full",
         flexDirectionClass(),
         flexWrapClass(),
         justifyContentClass(),
