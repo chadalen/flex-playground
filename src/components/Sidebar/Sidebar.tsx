@@ -1,6 +1,4 @@
 import { Component, For } from 'solid-js';
-import styles from './Sidebar.module.css';
-import clsx from 'clsx';
 import { useFlex } from '../../providers/flex-provider';
 
 interface Item {
@@ -84,7 +82,7 @@ const Sidebar: Component = () => {
   ] = useFlex();
   return (
     <div
-      class={clsx('p-4 border-r-2 overflow-y-scroll', styles.scroll_container)}
+      class={'p-4 border-r-2'}
     >
       <div class="mb-4">
         <h2 class="mb-2 font-semibold">{flexDirections.label}</h2>
