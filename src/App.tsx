@@ -8,16 +8,19 @@ import { FlexProvider } from './providers/flex-provider';
 const App: Component = () => {
   return (
     <CardProvider>
-      <div class='flex flex-col h-full'>
-        <Navbar />
-
-        <div class='grow flex'>
-          <FlexProvider>
-            <Sidebar />
-            <Canvas />
-          </FlexProvider>
+      <FlexProvider>
+        <div class="flex flex-col h-full">
+          <Navbar />
+          <div class="grid grid-cols-12 h-full">
+            <div class="col-span-2">
+              <Sidebar />
+            </div>
+            <div class="col-span-10 bg-slate-300">
+              <Canvas />
+            </div>
+          </div>
         </div>
-      </div>
+      </FlexProvider>
     </CardProvider>
   );
 };
