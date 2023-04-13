@@ -82,7 +82,8 @@ const Sidebar: Component = () => {
   ] = useFlex();
   return (
     <div
-      class={'p-4 border-r-2'}
+      class={'p-4 border-r-2 overflow-y-scroll'}
+      style={{ "max-height": 'calc(100vh - 66px)' }}
     >
       <div class="mb-4">
         <h2 class="mb-2 font-semibold">{flexDirections.label}</h2>
