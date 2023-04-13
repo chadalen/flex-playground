@@ -32,6 +32,7 @@ const Card: Component<CardProps> = ({
     <div class={clsx(
       'bg-white rounded p-2',
       { 'grow': flexGrow() > 0 },
+      { 'shrink': flexShrink() > 0 },
     )}>
       <div class='flex justify-between'>
         <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
