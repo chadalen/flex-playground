@@ -12,6 +12,7 @@ const Card: Component<CardProps> = ({
 }) => {
 
   const [flexGrow, setFlexGrow] = createSignal(0);
+  const [flexShrink, setFlexShrink] = createSignal(0);
 
   function handleCloseCard() {
     onCloseCard?.();
@@ -20,6 +21,11 @@ const Card: Component<CardProps> = ({
   function handleFlexGrowChange(e: Event) {
     const target = e.target as HTMLInputElement;
     setFlexGrow(parseInt(target.value));
+  }
+
+  function handleFlexShrinkChange(e: Event) {
+    const target = e.target as HTMLInputElement;
+    setFlexShrink(parseInt(target.value));
   }
 
   return (
@@ -55,7 +61,14 @@ const Card: Component<CardProps> = ({
 
       <label class='text-sm'>
         flex-shrink
-        <input class='block' type='number' value={0} />
+        <input
+          class='block'
+          type='number'
+          value={flexShrink()}
+          onChange={handleFlexShrinkChange}
+          min={0}
+          max={1}
+        />
       </label>
 
       <label class='text-sm'>
