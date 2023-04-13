@@ -14,6 +14,7 @@ const Card: Component<CardProps> = ({
   const [order, setOrder] = createSignal(0);
   const [flexGrow, setFlexGrow] = createSignal(0);
   const [flexShrink, setFlexShrink] = createSignal(0);
+  const [flexBasis, setFlexBasis] = createSignal('auto');
 
   function handleCloseCard() {
     onCloseCard?.();
@@ -34,6 +35,11 @@ const Card: Component<CardProps> = ({
     setOrder(parseInt(target.value));
   }
 
+  function handleSetFlexBasis(e: Event) {
+    const target = e.target as HTMLInputElement;
+    setFlexBasis(target.value);
+  }
+
   return (
     <div class={clsx(
       'bg-white rounded p-2',
@@ -41,7 +47,9 @@ const Card: Component<CardProps> = ({
       { 'shrink': flexShrink() > 0 },
       { 'order-none': order() === 0 },
       { [`order-${order()}`]: order() > 0 },
-    )}>
+    )}
+      style={{ "flex-basis": flexBasis() }}
+    >
       <div class='flex justify-between'>
         <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
           {children}
@@ -88,8 +96,13 @@ const Card: Component<CardProps> = ({
       </label>
 
       <label class='text-sm'>
-        flex-basic
-        <input class='block' type='text' value={0} />
+        flex-basis
+        <input
+          class='block'
+          type='text'
+          value={flexBasis()}
+          onChange={handleSetFlexBasis}
+        />
       </label>
 
       <label class='text-sm'>
