@@ -11,11 +11,9 @@ const App: Component = () => {
       <FlexProvider>
         <div class="flex flex-col h-full">
           <Navbar />
-          <div class="grid grid-cols-12 h-full">
-            <div class="col-span-2">
-              <Sidebar />
-            </div>
-            <div class="col-span-10 bg-slate-300">
+          <div class="flex h-full">
+            <Sidebar />
+            <div class="flex-grow bg-slate-300">
               <Canvas />
             </div>
           </div>
