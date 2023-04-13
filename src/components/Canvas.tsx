@@ -84,13 +84,15 @@ const Canvas: Component = () => {
   return (
     <div class={
       clsx(
-        "p-2 flex gap-2 h-full",
+        "p-2 flex gap-2 h-full overflow-y-scroll",
         flexDirectionClass(),
         flexWrapClass(),
         justifyContentClass(),
         alignItemsClass(),
         alignContentClass(),
-    )}>
+    )}
+        style={{ "max-height": "calc(100vh - 66px)" }}
+    >
       <For each={cards()}>
         {(_, index) => {
           return <Card onCloseCard={() => removeCard(index())}>{index}</Card>;
