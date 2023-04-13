@@ -11,6 +11,7 @@ const Card: Component<CardProps> = ({
   onCloseCard,
 }) => {
 
+  const [order, setOrder] = createSignal(0);
   const [flexGrow, setFlexGrow] = createSignal(0);
   const [flexShrink, setFlexShrink] = createSignal(0);
 
@@ -28,11 +29,18 @@ const Card: Component<CardProps> = ({
     setFlexShrink(parseInt(target.value));
   }
 
+  function handleSetOrder(e: Event) {
+    const target = e.target as HTMLInputElement;
+    setOrder(parseInt(target.value));
+  }
+
   return (
     <div class={clsx(
       'bg-white rounded p-2',
       { 'grow': flexGrow() > 0 },
       { 'shrink': flexShrink() > 0 },
+      { 'order-none': order() === 0 },
+      { [`order-${order()}`]: order() > 0 },
     )}>
       <div class='flex justify-between'>
         <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
@@ -45,7 +53,14 @@ const Card: Component<CardProps> = ({
 
       <label class='text-sm'>
         order
-        <input class='block' type='number' value={0} />
+        <input
+          class='block'
+          type='number'
+          value={order()}
+          onChange={handleSetOrder}
+          min={0}
+          max={12}
+        />
       </label>
 
       <label class='text-sm'>
