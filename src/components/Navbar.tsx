@@ -62,11 +62,11 @@ const Navbar: Component = () => {
 
       <div class='col-span-4'>
         <div class='flex justify-end gap-2'>
-          <a href='https://www.buymeacoffee.com/chadalen' target='_blank' rel='noopener'>
+          <a href='https://www.buymeacoffee.com/chadalen' target='_blank' rel='noopener' title='Buy me a coffee'>
             <SiBuymeacoffee size='32' />
           </a>
 
-          <a href='https://github.com/chadalen/flexbox-playground' target='_blank' rel='noopener'>
+          <a href='https://github.com/chadalen/flexbox-playground' target='_blank' rel='noopener' title='Github link'>
             <FaBrandsGithub size='32' />
           </a>
         </div>
