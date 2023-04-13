@@ -60,7 +60,7 @@ const Card: Component<CardProps> = ({
 
   return (
     <div class={clsx(
-      'bg-white rounded p-2',
+      'bg-white rounded p-3',
       { 'grow': flexGrow() > 0 },
       { 'shrink': flexShrink() > 0 },
       { 'order-none': order() === 0 },
@@ -69,7 +69,7 @@ const Card: Component<CardProps> = ({
     )}
       style={{ "flex-basis": flexBasis() }}
     >
-      <div class='flex justify-between'>
+      <div class='flex justify-between mb-3'>
         <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
           {children}
         </span>
@@ -78,10 +78,10 @@ const Card: Component<CardProps> = ({
         </button>
       </div>
 
-      <label class='text-sm'>
-        order
+      <label class='block text-sm mb-2'>
+        <span class='font-medium'>order</span>
         <input
-          class='block'
+          class='block border-b w-full'
           type='number'
           value={order()}
           onChange={handleSetOrder}
@@ -90,10 +90,10 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='text-sm'>
-        flex-grow
+      <label class='block text-sm mb-2'>
+        <span class='font-medium'>flex-grow</span>
         <input
-          class='block'
+          class='block border-b w-full'
           type='number'
           value={flexGrow()}
           onChange={handleFlexGrowChange}
@@ -102,10 +102,10 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='text-sm'>
-        flex-shrink
+      <label class='block text-sm mb-2'>
+        <span class='font-medium'>flex-shrink</span>
         <input
-          class='block'
+          class='block border-b w-full'
           type='number'
           value={flexShrink()}
           onChange={handleFlexShrinkChange}
@@ -114,20 +114,20 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='text-sm'>
-        flex-basis
+      <label class='block text-sm mb-2'>
+        <span class='font-medium'>flex-basis</span>
         <input
-          class='block'
+          class='block border-b w-full'
           type='text'
           value={flexBasis()}
           onChange={handleSetFlexBasis}
         />
       </label>
 
-      <label class='text-sm'>
-        align-self
+      <label class='block text-sm'>
+        <span class='font-medium'>align-self</span>
         <select
-          class='block'
+          class='block w-full'
           value={alignSelf()}
           onChange={(e) => setAlignSelf(e.target.value)}
         >
