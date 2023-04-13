@@ -6,6 +6,23 @@ export interface CardProps {
   onCloseCard?: () => void;
 }
 
+function getAlignSelfClass(alignSelf: string) {
+  switch (alignSelf) {
+    case 'flex-start':
+      return 'self-start';
+    case 'flex-end':
+      return 'self-end';
+    case 'center':
+      return 'self-center';
+    case 'baseline':
+      return 'self-baseline';
+    case 'stretch':
+      return 'self-stretch';
+    default:
+      return '';
+  }
+}
+
 const Card: Component<CardProps> = ({
   children,
   onCloseCard,
@@ -15,6 +32,7 @@ const Card: Component<CardProps> = ({
   const [flexGrow, setFlexGrow] = createSignal(0);
   const [flexShrink, setFlexShrink] = createSignal(0);
   const [flexBasis, setFlexBasis] = createSignal('auto');
+  const [alignSelf, setAlignSelf] = createSignal('auto');
 
   function handleCloseCard() {
     onCloseCard?.();
@@ -47,6 +65,7 @@ const Card: Component<CardProps> = ({
       { 'shrink': flexShrink() > 0 },
       { 'order-none': order() === 0 },
       { [`order-${order()}`]: order() > 0 },
+      { [getAlignSelfClass(alignSelf())]: !!alignSelf() },
     )}
       style={{ "flex-basis": flexBasis() }}
     >
@@ -107,7 +126,18 @@ const Card: Component<CardProps> = ({
 
       <label class='text-sm'>
         align-self
-        <input class='block' type='text' value={0} />
+        <select
+          class='block'
+          value={alignSelf()}
+          onChange={(e) => setAlignSelf(e.target.value)}
+        >
+          <option value='auto'>auto</option>
+          <option value='flex-start'>flex-start</option>
+          <option value='flex-end'>flex-end</option>
+          <option value='center'>center</option>
+          <option value='baseline'>baseline</option>
+          <option value='stretch'>stretch</option>
+        </select>
       </label>
     </div>
   )
