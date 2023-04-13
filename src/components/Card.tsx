@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { Component, createSignal } from 'solid-js';
+import { FaSolidTrashCan } from 'solid-icons/fa'
 
 export interface CardProps {
   children?: any;
@@ -73,8 +74,8 @@ const Card: Component<CardProps> = ({
         <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
           {children}
         </span>
-        <button onClick={handleCloseCard}>
-          X
+        <button type='button' onClick={handleCloseCard} title="Delete">
+          <FaSolidTrashCan />
         </button>
       </div>
 
