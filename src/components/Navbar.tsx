@@ -34,26 +34,26 @@ const Navbar: Component = () => {
   }
 
   return (
-    <div class="p-4 border-b-2 flex">
+    <div class="p-4 border-b-2 flex items-center">
       <div>
         <h1 class="text-2xl font-bold">Flex Playground</h1>
       </div>
 
       <div class='mx-4 flex-grow flex items-center justify-center'>
         <button
-          class="bg-blue-500 px-2 py-1 rounded text-white font-bold mr-4"
+          class="bg-blue-500 p-2 rounded text-white font-bold mr-4"
           onClick={() => addCard()}
         >
           Add Flex Item
         </button>
         <button
-          class="bg-gray-200 px-2 py-1 rounded font-bold mr-4"
+          class="bg-gray-200 p-2 rounded font-bold mr-4"
           onClick={handleReset}
         >
           Reset Controls
         </button>
         <button
-          class="bg-gray-200 px-2 py-1 rounded font-bold"
+          class="bg-gray-200 p-2 rounded font-bold"
           onClick={handleClearCards}
         >
           Delete Flex Items

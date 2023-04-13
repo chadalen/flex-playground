@@ -91,7 +91,7 @@ const Canvas: Component = () => {
         alignItemsClass(),
         alignContentClass(),
     )}
-        style={{ "max-height": "calc(100vh - 66px)" }}
+        style={{ "max-height": "calc(100vh - 74px)" }}
     >
       <For each={cards()}>
         {(_, index) => {
