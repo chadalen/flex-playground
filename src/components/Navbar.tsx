@@ -44,7 +44,7 @@ const Navbar: Component = () => {
           class="bg-blue-500 px-2 py-1 rounded text-white font-bold mr-4"
           onClick={() => addCard()}
         >
-          Add Item
+          Add Flex Item
         </button>
         <button
           class="bg-gray-200 px-2 py-1 rounded font-bold mr-4"
@@ -56,7 +56,7 @@ const Navbar: Component = () => {
           class="bg-gray-200 px-2 py-1 rounded font-bold"
           onClick={handleClearCards}
         >
-          Reset Items
+          Delete Flex Items
         </button>
       </div>
 
