@@ -3,6 +3,7 @@ import Card from './Card';
 import { useCard } from '../providers/card-provider';
 import clsx from 'clsx';
 import { useFlex } from '../providers/flex-provider';
+import Footer from './Footer';
 
 const Canvas: Component = () => {
   const [cards, { removeCard }] = useCard();
@@ -82,22 +83,26 @@ const Canvas: Component = () => {
   }
 
   return (
-    <div class={
-      clsx(
-        "p-2 flex gap-2 h-full overflow-y-scroll",
-        flexDirectionClass(),
-        flexWrapClass(),
-        justifyContentClass(),
-        alignItemsClass(),
-        alignContentClass(),
-    )}
+    <div class='flex flex-col h-full'>
+      <div class={
+        clsx(
+          "p-1 md:p-2 flex gap-1 md:gap-2 grow bg-slate-300 overflow-y-scroll",
+          flexDirectionClass(),
+          flexWrapClass(),
+          justifyContentClass(),
+          alignItemsClass(),
+          alignContentClass(),
+        )}
         style={{ "max-height": "calc(100vh - 74px)" }}
-    >
-      <For each={cards()}>
-        {(_, index) => {
-          return <Card onCloseCard={() => removeCard(index())}>{index}</Card>;
-        }}
-      </For>
+      >
+        <For each={cards()}>
+          {(_, index) => {
+            return <Card onCloseCard={() => removeCard(index())}>{index}</Card>;
+          }}
+        </For>
+      </div>
+
+      <Footer />
     </div>
   );
 };

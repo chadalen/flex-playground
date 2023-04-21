@@ -13,7 +13,7 @@ const App: Component = () => {
           <Navbar />
           <div class="flex h-full">
             <Sidebar />
-            <div class="flex-grow bg-slate-300">
+            <div class="flex-grow">
               <Canvas />
             </div>
           </div>

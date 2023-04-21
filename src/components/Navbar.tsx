@@ -1,8 +1,6 @@
 import { Component } from 'solid-js';
 import { useCard } from '../providers/card-provider';
 import { useFlex } from '../providers/flex-provider';
-import { FaBrandsGithub } from 'solid-icons/fa';
-import { SiBuymeacoffee } from 'solid-icons/si'
 
 const Navbar: Component = () => {
   const [_, { addCard, clearCards }] = useCard();
@@ -34,42 +32,31 @@ const Navbar: Component = () => {
   }
 
   return (
-    <div class="p-4 border-b-2 flex items-center">
+    <div class="p-2 md:p-4 border-b-2 flex items-center">
       <div>
-        <h1 class="text-2xl font-bold">Flex Playground</h1>
+        <h1 class="block md:hidden text-lg md:text-2xl font-bold">Flexbox<br />Playground</h1>
+        <h1 class="hidden md:block text-lg md:text-2xl font-bold">Flexbox Playground</h1>
       </div>
 
-      <div class='mx-4 flex-grow flex items-center justify-center'>
+      <div class='ml-2 md:ml-4 flex-grow flex items-center justify-center'>
         <button
-          class="bg-blue-500 p-2 rounded text-white font-bold mr-4"
+          class="bg-blue-500 p-1 md:p-2 text-sm md:text-base rounded text-white font-bold mr-2 md:mr-4 whitespace-nowrap"
           onClick={() => addCard()}
         >
           Add Flex Item
         </button>
         <button
-          class="bg-gray-200 p-2 rounded font-bold mr-4"
+          class="bg-gray-200 p-1 md:p-2 text-sm md:text-base rounded font-bold mr-2 md:mr-4 whitespace-nowrap"
           onClick={handleReset}
         >
           Reset Controls
         </button>
         <button
-          class="bg-gray-200 p-2 rounded font-bold"
+          class="bg-gray-200 p-1 md:p-2 text-sm md:text-base rounded font-bold whitespace-nowrap"
           onClick={handleClearCards}
         >
           Delete Flex Items
         </button>
-      </div>
-
-      <div>
-        <div class='flex justify-end gap-2'>
-          <a href='https://www.buymeacoffee.com/chadalen' target='_blank' rel='noopener' title='Buy me a coffee'>
-            <SiBuymeacoffee size='32' />
-          </a>
-
-          <a href='https://github.com/chadalen/flexbox-playground' target='_blank' rel='noopener' title='Github link'>
-            <FaBrandsGithub size='32' />
-          </a>
-        </div>
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ const Card: Component<CardProps> = ({
 
   return (
     <div class={clsx(
-      'bg-white rounded p-3',
+      'bg-white rounded p-2 md:p-3',
       { 'grow': flexGrow() > 0 },
       { 'shrink': flexShrink() > 0 },
       { 'order-none': order() === 0 },
@@ -71,7 +71,7 @@ const Card: Component<CardProps> = ({
       style={{ "flex-basis": flexBasis() }}
     >
       <div class='flex justify-between mb-3'>
-        <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-sm font-bold'>
+        <span class='bg-orange-500 w-6 h-6 rounded-full text-white flex items-center justify-center text-xs md:text-sm font-bold'>
           {children}
         </span>
         <button type='button' onClick={handleCloseCard} title="Delete">
@@ -79,7 +79,7 @@ const Card: Component<CardProps> = ({
         </button>
       </div>
 
-      <label class='block text-sm mb-2'>
+      <label class='block text-xs md:text-sm mb-2'>
         <span class='font-medium'>order</span>
         <input
           class='block border-b w-full'
@@ -91,7 +91,7 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='block text-sm mb-2'>
+      <label class='block text-xs md:text-sm mb-2'>
         <span class='font-medium'>flex-grow</span>
         <input
           class='block border-b w-full'
@@ -103,7 +103,7 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='block text-sm mb-2'>
+      <label class='block text-xs md:text-sm mb-2'>
         <span class='font-medium'>flex-shrink</span>
         <input
           class='block border-b w-full'
@@ -115,7 +115,7 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='block text-sm mb-2'>
+      <label class='block text-xs md:text-sm mb-2'>
         <span class='font-medium'>flex-basis</span>
         <input
           class='block border-b w-full'
@@ -125,7 +125,7 @@ const Card: Component<CardProps> = ({
         />
       </label>
 
-      <label class='block text-sm'>
+      <label class='block text-xs md:text-sm'>
         <span class='font-medium'>align-self</span>
         <select
           class='block w-full'

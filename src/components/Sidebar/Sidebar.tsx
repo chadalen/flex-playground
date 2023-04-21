@@ -82,14 +82,14 @@ const Sidebar: Component = () => {
   ] = useFlex();
   return (
     <div
-      class={'p-4 border-r-2 overflow-y-scroll'}
+      class={'p-2 md:p-4 border-r-2 overflow-y-scroll'}
       style={{ "max-height": 'calc(100vh - 74px)', 'min-width': '169.02px' }}
     >
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold">{flexDirections.label}</h2>
+        <h2 class="mb-2 font-semibold text-base md:text-lg">{flexDirections.label}</h2>
         <For each={flexDirections.options}>
           {(option) => (
-            <label class="block">
+            <label class="block text-sm md:text-base">
               <input
                 type="radio"
                 name={flexDirections.label}
