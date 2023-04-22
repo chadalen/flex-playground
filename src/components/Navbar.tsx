@@ -19,14 +19,6 @@ const Navbar: Component = () => {
     },
   ] = useFlex();
 
-  function handleReset() {
-    setFlexDirection('row');
-    setFlexWrap('nowrap');
-    setJustifyContent('flex-start');
-    setAlignItems('flex-start');
-    setAlignContent('flex-start');
-  }
-
   function handleClearCards() {
     clearCards();
   }
@@ -44,12 +36,6 @@ const Navbar: Component = () => {
           onClick={() => addCard()}
         >
           Add Flex Item
-        </button>
-        <button
-          class="bg-gray-200 p-1 md:p-2 text-sm md:text-base rounded font-bold mr-2 md:mr-4 whitespace-nowrap"
-          onClick={handleReset}
-        >
-          Reset Controls
         </button>
         <button
           class="bg-gray-200 p-1 md:p-2 text-sm md:text-base rounded font-bold whitespace-nowrap"

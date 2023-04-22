@@ -80,16 +80,25 @@ const Sidebar: Component = () => {
       setAlignContent,
     },
   ] = useFlex();
+
+  function handleReset() {
+    setFlexDirection('row');
+    setFlexWrap('nowrap');
+    setJustifyContent('flex-start');
+    setAlignItems('flex-start');
+    setAlignContent('flex-start');
+  }
+
   return (
     <div
-      class={'p-2 md:p-4 border-r-2 overflow-y-scroll'}
-      style={{ "max-height": 'calc(100vh - 74px)', 'min-width': '169.02px' }}
+      class={'p-2 md:p-4 border-r-2 overflow-y-scroll min-w-[127.8px] md:min-w-[169.02px]'}
+      style={{ "max-height": 'calc(100vh - 74px)' }}
     >
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold text-base md:text-lg">{flexDirections.label}</h2>
+        <h2 class="mb-2 font-semibold text-sm md:text-lg">{flexDirections.label}</h2>
         <For each={flexDirections.options}>
           {(option) => (
-            <label class="block text-sm md:text-base">
+            <label class="block text-xs md:text-base">
               <input
                 type="radio"
                 name={flexDirections.label}
@@ -105,10 +114,10 @@ const Sidebar: Component = () => {
       </div>
 
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold">{flexWraps.label}</h2>
+        <h2 class="mb-2 font-semibold text-sm md:text-lg">{flexWraps.label}</h2>
         <For each={flexWraps.options}>
           {(option) => (
-            <label class="block">
+            <label class="block text-xs md:text-base">
               <input
                 type="radio"
                 name={flexWraps.label}
@@ -124,10 +133,10 @@ const Sidebar: Component = () => {
       </div>
 
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold">{justifyContents.label}</h2>
+        <h2 class="mb-2 font-semibold text-sm md:text-lg">{justifyContents.label}</h2>
         <For each={justifyContents.options}>
           {(option) => (
-            <label class="block">
+            <label class="block text-xs md:text-base">
               <input
                 type="radio"
                 name={justifyContents.label}
@@ -143,10 +152,10 @@ const Sidebar: Component = () => {
       </div>
 
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold">{alignItems.label}</h2>
+        <h2 class="mb-2 font-semibold text-sm md:text-lg">{alignItems.label}</h2>
         <For each={alignItems.options}>
           {(option) => (
-            <label class="block">
+            <label class="block text-xs md:text-base">
               <input
                 type="radio"
                 name={alignItems.label}
@@ -162,10 +171,10 @@ const Sidebar: Component = () => {
       </div>
 
       <div class="mb-4">
-        <h2 class="mb-2 font-semibold">{alignContents.label}</h2>
+        <h2 class="mb-2 font-semibold text-sm md:text-lg">{alignContents.label}</h2>
         <For each={alignContents.options}>
           {(option) => (
-            <label class="block">
+            <label class="block text-xs md:text-base">
               <input
                 type="radio"
                 name={alignContents.label}
@@ -179,6 +188,13 @@ const Sidebar: Component = () => {
           )}
         </For>
       </div>
+
+      <button
+        class="bg-gray-200 w-full p-1 md:p-2 text-sm md:text-base rounded font-bold mr-2 md:mr-4 whitespace-nowrap"
+        onClick={handleReset}
+      >
+        Reset
+      </button>
     </div>
   );
 };
