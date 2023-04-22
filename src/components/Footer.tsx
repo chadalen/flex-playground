@@ -4,7 +4,7 @@ import { SiBuymeacoffee } from "solid-icons/si";
 const Footer = () => {
   return (
     <div class='bg-white p-3 flex items-center justify-center gap-4 md:gap-8'>
-      <span class='text-xs'>Made by Chad Adams</span>
+      <span class='text-xs md:text-sm'>Made by Chad Adams</span>
 
       <div>
         <div class='flex justify-end gap-2'>
